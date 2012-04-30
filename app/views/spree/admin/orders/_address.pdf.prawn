@@ -31,7 +31,7 @@ bounding_box [0,600], :width => 540 do
     data2 << ["#{@order.bill_address.zipcode} #{@order.bill_address.city}  #{(@order.bill_address.state ? @order.bill_address.state.abbr : "")} ",
                 "#{@order.ship_address.zipcode} #{@order.ship_address.city} #{(@order.ship_address.state ? @order.ship_address.state.abbr : "")}"]
     data2 << [bill_address.country.name, ship_address.country.name]
-    data2 << [bill_address.phone, ship_address.phone]
+    data2 << ["Phone: " + bill_address.phone, "Phone: " + ship_address.phone]
     data2 << [@order.shipping_method.try(:name), @order.shipping_method.try(:name)]
 
     table data2,
