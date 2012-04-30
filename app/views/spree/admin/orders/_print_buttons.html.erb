@@ -1,7 +1,4 @@
 <% if @order.completed_at? %>
-  <% buttons = "invoice" 
-     buttons = buttons.split(",").collect{|b| b.strip } %>
-  <%  buttons.each do |button| %>
-    <%= button_link_to('Invoice', spree.admin_order_path(@order, :pdf , :template => button)) %>
-  <% end %>
-<% end %>  
+  <%= button_link_to('Invoice', spree.admin_order_path(@order, :pdf , :template => :invoice)) %>
+  <%= button_link_to('Packaging Slip', spree.admin_order_path(@order, :pdf , :template => :packaging_slip)) %>
+<% end %>
