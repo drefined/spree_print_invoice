@@ -1,3 +1,4 @@
+require 'spree/core'
 require 'spree_print_invoice/engine'
 require 'prawn_handler'
 
